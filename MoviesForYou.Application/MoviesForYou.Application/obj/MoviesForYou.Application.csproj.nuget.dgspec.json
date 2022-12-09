@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\MoviesApplication\\MoviesForYou.Application\\MoviesForYou.Application\\MoviesForYou.Application.csproj": {}
+    "C:\\MoviesForYou\\MoviesForYou.Application\\MoviesForYou.Application\\MoviesForYou.Application.csproj": {}
   },
   "projects": {
-    "C:\\MoviesApplication\\MoviesForYou.Application\\MoviesForYou.Application\\MoviesForYou.Application.csproj": {
+    "C:\\MoviesForYou\\MoviesForYou.Application\\MoviesForYou.Application\\MoviesForYou.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\MoviesApplication\\MoviesForYou.Application\\MoviesForYou.Application\\MoviesForYou.Application.csproj",
+        "projectUniqueName": "C:\\MoviesForYou\\MoviesForYou.Application\\MoviesForYou.Application\\MoviesForYou.Application.csproj",
         "projectName": "MoviesForYou.Application",
-        "projectPath": "C:\\MoviesApplication\\MoviesForYou.Application\\MoviesForYou.Application\\MoviesForYou.Application.csproj",
+        "projectPath": "C:\\MoviesForYou\\MoviesForYou.Application\\MoviesForYou.Application\\MoviesForYou.Application.csproj",
         "packagesPath": "C:\\Users\\prana\\.nuget\\packages\\",
-        "outputPath": "C:\\MoviesApplication\\MoviesForYou.Application\\MoviesForYou.Application\\obj\\",
+        "outputPath": "C:\\MoviesForYou\\MoviesForYou.Application\\MoviesForYou.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

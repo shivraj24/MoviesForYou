@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mJUKFucFM7VmiXQ+D0G63NX74O+wgyNurPkFHC42zFPBtV0+i8fNh76sWcOOnwwe2f+tQ+4B/3+UW1vTXSFKjw==",
+  "dgSpecHash": "SuvW0zBtK2LZWbyUfZc93AM5ERW/eulk+cMhAMqeAeM07iAuHdV1YjHyRDmP55yVr85dQnCspIYE6M94wLrvLQ==",
   "success": true,
-  "projectFilePath": "C:\\MoviesApplication\\MoviesForYou.Application\\MoviesForYou.Application\\MoviesForYou.Application.csproj",
+  "projectFilePath": "C:\\MoviesForYou\\MoviesForYou.Application\\MoviesForYou.Application\\MoviesForYou.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\prana\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\prana\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
