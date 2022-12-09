@@ -4,8 +4,8 @@ namespace MoviesForYou.Application.API.Interfaces
 {
     public interface IProducerServices
     {
-        Task<bool> AddProducer(Producer producer);
-        Task<bool> UpdateProducer(Producer producer);
-
+        Task<bool> AddProducerAsync(Producer producer);
+        Task<bool> UpdateProducerAsync(Producer producer);
+        Task<List<Producer>> GetAllProducersAsync();
     }
 }

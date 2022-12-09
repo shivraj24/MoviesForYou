@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MoviesForYou.Application.API.Data;
+using MoviesForYou.Application.API.Interfaces;
 using MoviesForYou.Application.API.Models;
 
 namespace MoviesForYou.Application.API.Controllers
@@ -9,32 +10,28 @@ namespace MoviesForYou.Application.API.Controllers
     [ApiController]
     public class ActorsController : ControllerBase
     {
-        private readonly MoviesDataContext context;
-        public ActorsController(MoviesDataContext _context) 
+        private readonly IActorServices actorServices;
+        public ActorsController(IActorServices _actorServices) 
         {
-            context = _context;
+            this.actorServices = _actorServices;
         }   
         [HttpPost("addActor")]
-        public async Task<IActionResult> AddActor(Actor actor)
+        public async Task<IActionResult> AddActorAsync(Actor actor)
         {
-            await context.Actors.AddAsync(actor);
-            context.SaveChanges();
-            return Ok("success");
+            var isSuccessful = await actorServices.AddActorAsync(actor);
+            return Ok("Successfully Added the Actor");
         } 
 
         [HttpPut("updateActor")]
-        public async Task<IActionResult> UpdateActor(Actor actor)
+        public async Task<IActionResult> UpdateActorAsync(Actor actor)
         {
-            var existingActor = await context.Actors.FindAsync(actor.ActorId);
-            if (existingActor == null)
-            {
-                return NotFound("Actor doesn't exist");
-            }
-            existingActor.Name = actor.Name;
-            existingActor.DateOfBirth = actor.DateOfBirth;
-            existingActor.Gender = actor.Gender;
-            context.SaveChanges();
-            return Ok("success");
+            var isSuccessful = await actorServices.UpdateActorAsync(actor);
+            return Ok("Successfully Updated the actor");
+        }
+        [HttpGet("actors")]
+        public async Task<ActionResult<List<Actor>>> GetAllActorsAsync()
+        {
+            return await actorServices.GetAllActorsAsync();
         }
 
     }

@@ -5,8 +5,8 @@ namespace MoviesForYou.Application.API.Interfaces
     public interface IMovieServices
     {
         Task<List<Movie>> GetAllMoviesAsync();
-        Task<bool> AddMovie(Movie movie);
-        Task<bool> UpdateMovie(Movie movie);
+        Task<bool> AddMovieAsync(Movie movie);
+        Task<bool> UpdateMovieAsync(Movie movie);
 
     }
 }

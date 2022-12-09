@@ -63,3 +63,7 @@ C:\MoviesForYou\MoviesForYou.Application\MoviesForYou.Application\obj\Debug\net6
 C:\MoviesForYou\MoviesForYou.Application\MoviesForYou.Application\obj\Debug\net6.0\MoviesForYou.Application.API.pdb
 C:\MoviesForYou\MoviesForYou.Application\MoviesForYou.Application\obj\Debug\net6.0\MoviesForYou.Application.API.genruntimeconfig.cache
 C:\MoviesForYou\MoviesForYou.Application\MoviesForYou.Application\obj\Debug\net6.0\ref\MoviesForYou.Application.API.dll
+C:\MoviesForYou\MoviesForYou.Application\MoviesForYou.Application\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\MoviesForYou\MoviesForYou.Application\MoviesForYou.Application\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\MoviesForYou\MoviesForYou.Application\MoviesForYou.Application\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\MoviesForYou\MoviesForYou.Application\MoviesForYou.Application\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

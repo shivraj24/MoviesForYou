@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using MoviesForYou.Application.API.Data;
+using MoviesForYou.Application.API.Interfaces;
+using MoviesForYou.Application.API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +15,14 @@ builder.Services.AddDbContext<MoviesDataContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+builder.Services.AddTransient<IMovieServices, MovieServices>();
+builder.Services.AddTransient<IActorServices, ActorServices>();
+builder.Services.AddTransient<IProducerServices, ProducerServices>();
+builder.Services.AddControllersWithViews()
+    .AddNewtonsoftJson(options =>
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+);
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

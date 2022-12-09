@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic;
+using System.Text.Json.Serialization;
 
 namespace MoviesForYou.Application.API.Models
 {
@@ -10,7 +11,6 @@ namespace MoviesForYou.Application.API.Models
         public DateTime? DateOfRelease { get; set; }
         public Producer? Producer { get; set; }
         public List<Actor>? Actors { get; set; }
-
 
     }
 }
