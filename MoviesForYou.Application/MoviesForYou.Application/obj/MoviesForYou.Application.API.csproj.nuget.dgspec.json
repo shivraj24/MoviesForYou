@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\MoviesForYou\\MoviesForYou.Application\\MoviesForYou.Application\\MoviesForYou.Application.csproj": {}
+    "C:\\MoviesForYou\\MoviesForYou.Application\\MoviesForYou.Application\\MoviesForYou.Application.API.csproj": {}
   },
   "projects": {
-    "C:\\MoviesForYou\\MoviesForYou.Application\\MoviesForYou.Application\\MoviesForYou.Application.csproj": {
+    "C:\\MoviesForYou\\MoviesForYou.Application\\MoviesForYou.Application\\MoviesForYou.Application.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\MoviesForYou\\MoviesForYou.Application\\MoviesForYou.Application\\MoviesForYou.Application.csproj",
-        "projectName": "MoviesForYou.Application",
-        "projectPath": "C:\\MoviesForYou\\MoviesForYou.Application\\MoviesForYou.Application\\MoviesForYou.Application.csproj",
+        "projectUniqueName": "C:\\MoviesForYou\\MoviesForYou.Application\\MoviesForYou.Application\\MoviesForYou.Application.API.csproj",
+        "projectName": "MoviesForYou.Application.API",
+        "projectPath": "C:\\MoviesForYou\\MoviesForYou.Application\\MoviesForYou.Application\\MoviesForYou.Application.API.csproj",
         "packagesPath": "C:\\Users\\prana\\.nuget\\packages\\",
         "outputPath": "C:\\MoviesForYou\\MoviesForYou.Application\\MoviesForYou.Application\\obj\\",
         "projectStyle": "PackageReference",
@@ -47,7 +47,7 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[6.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",

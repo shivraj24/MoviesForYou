@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\MoviesForYou.Application.API.props" />
+</Project>
