@@ -32,30 +32,33 @@
 
 `POST /thing/`
 
-    curl -i -H 'Accept: application/json' -d '{
-  "movieId": 0,
-  "name": "Andrew Schulz",
-  "plot": "Comedy",
-  "dateOfRelease": "2022-12-10T10:25:46.760Z",
-  "producer": {
-    "producerId": 2,
-    "name": "The Rock",
-    "bio": "Rock Solid",
-    "dateOfBirth": "2022-12-09T17:11:11.327",
-    "company": "Teremauna",
-    "gender": 0
-  },
-  "actors": [
-    {
-    "actorId": 1,
-    "name": "pranav",
-    "bio": "string",
-    "dateOfBirth": "2022-12-09T14:17:45.721",
-    "gender": 0,
-    "movies": null
-  },
-  ]
-}' https://localhost:7093/api/MoviesForYou/AddMovie
+    curl -i -H 'Accept: application/json' https://localhost:7093/api/MoviesForYou/AddMovie
+
+    Request Payload:
+   {
+      "movieId": 0,
+      "name": "Andrew Schulz",
+      "plot": "Comedy",
+      "dateOfRelease": "2022-12-10T10:25:46.760Z",
+      "producer": {
+        "producerId": 2,
+        "name": "The Rock",
+        "bio": "Rock Solid",
+        "dateOfBirth": "2022-12-09T17:11:11.327",
+        "company": "Teremauna",
+        "gender": 0
+      },
+      "actors": [
+        {
+        "actorId": 1,
+        "name": "pranav",
+        "bio": "string",
+        "dateOfBirth": "2022-12-09T14:17:45.721",
+        "gender": 0,
+        "movies": null
+      },
+      ]
+   }
 
 ### Response
 
