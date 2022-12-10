@@ -16,24 +16,24 @@ namespace MoviesForYou.Application.API.Controllers
         }
 
         [HttpGet("Movies")]
-        public async Task<ActionResult<List<Movie>>> GetAllMovies()
+        public async Task<ActionResult<SuccessfulResponse<List<Movie>>>> GetAllMovies()
         {
             var movies = await movieServices.GetAllMoviesAsync();
-            return Ok(movies);
+            return Ok(new SuccessfulResponse<List<Movie>>(movies, "Retrived data successfully"));
         }
 
         [HttpPost("AddMovie")]
-        public async Task<ActionResult> AddMovie(Movie? movie)
+        public async Task<ActionResult<SuccessfulResponse<Movie>>> AddMovie(Movie movie)
         {
             var isSuccessful = await movieServices.AddMovieAsync(movie);
-            return Ok("Success");
+            return Ok(new SuccessfulResponse<Movie>(movie, "Successfully Added"));
         }
 
         [HttpPut("UpdateMovie")]
-        public async Task<ActionResult> UpdateMovie(Movie? movie)
+        public async Task<ActionResult<SuccessfulResponse<Movie>>> UpdateMovie(Movie movie)
         {
-            var isSuccessful = await movieServices.UpdateMovieAsync(movie);
-            return Ok("Success");
+            await movieServices.UpdateMovieAsync(movie);
+            return Ok(new SuccessfulResponse<Movie>(movie, "Update successfull"));
         }
     }
 }
