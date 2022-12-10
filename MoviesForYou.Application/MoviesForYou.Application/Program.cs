@@ -1,19 +1,24 @@
+using Microsoft.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 using MoviesForYou.Application.API;
 using MoviesForYou.Application.API.Data;
 using MoviesForYou.Application.API.Interfaces;
 using MoviesForYou.Application.API.Services;
 
-var builder = WebApplication.CreateBuilder(args);
 
-
-
-var startup = new Startup(builder.Configuration);
-// Add services to the container.
-
-startup.ConfigureServices(builder.Services);
-
-var app = builder.Build();
-
-// Add Middlewares to the request response pipeline
-startup.Configure(app, builder.Environment);
+namespace MoviesForYou.Application.API
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            CreateHostBuilder(args).Build().Run();
+        }
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder.UseStartup<Startup>();
+            });
+    }
+}

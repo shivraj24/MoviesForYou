@@ -32,7 +32,7 @@ namespace MoviesForYou.Application.API
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
             );
         }
-        public void Configure(WebApplication app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -41,12 +41,14 @@ namespace MoviesForYou.Application.API
             }
 
             app.UseHttpsRedirection();
-
+            app.UseStaticFiles();
+            app.UseRouting();
             app.UseAuthorization();
 
-            app.MapControllers();
-
-            app.Run();
+            app.UseEndpoints(options =>
+            {
+                options.MapControllers();
+            });
             // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         }
     }
