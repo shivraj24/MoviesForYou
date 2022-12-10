@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using MoviesForYou.Application.API.Data;
+using MoviesForYou.Application.API.Helpers;
 using MoviesForYou.Application.API.Interfaces;
+using MoviesForYou.Application.API.Middlewares;
 using MoviesForYou.Application.API.Services;
 
 namespace MoviesForYou.Application.API
@@ -17,6 +19,7 @@ namespace MoviesForYou.Application.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddTransient<ExceptionHandlerMiddleware>();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
@@ -27,6 +30,7 @@ namespace MoviesForYou.Application.API
             services.AddTransient<IMovieServices, MovieServices>();
             services.AddTransient<IActorServices, ActorServices>();
             services.AddTransient<IProducerServices, ProducerServices>();
+            services.AddTransient<IValidationService, ValidationService>();
             services.AddControllersWithViews()
                 .AddNewtonsoftJson(options =>
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
@@ -37,12 +41,18 @@ namespace MoviesForYou.Application.API
             if (env.IsDevelopment())
             {
                 app.UseSwagger();
+
                 app.UseSwaggerUI();
             }
 
             app.UseHttpsRedirection();
+
             app.UseStaticFiles();
+
             app.UseRouting();
+
+            app.UseMiddleware<ExceptionHandlerMiddleware>();
+
             app.UseAuthorization();
 
             app.UseEndpoints(options =>

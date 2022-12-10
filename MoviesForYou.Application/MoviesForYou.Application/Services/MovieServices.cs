@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MoviesForYou.Application.API.Data;
+using MoviesForYou.Application.API.ExceptionHandler;
+using MoviesForYou.Application.API.Helpers;
 using MoviesForYou.Application.API.Interfaces;
 using MoviesForYou.Application.API.Models;
 using System.Collections.Generic;
@@ -9,12 +11,18 @@ namespace MoviesForYou.Application.API.Services
     public class MovieServices : IMovieServices
     {
         private readonly MoviesDataContext context;
-        public MovieServices(MoviesDataContext _context)
+        private readonly IValidationService validationService;
+        public MovieServices(MoviesDataContext _context, IValidationService _validationService)
         {
-            context = _context;
+            this.context = _context;
+            this.validationService = _validationService;
         }
         public async Task<bool> AddMovieAsync(Movie movie)
         {
+            if(!validationService.isValidMovie(movie))
+            {
+                throw new BadRequestException("Invalid request parameter");
+            }
             try
             {
                 var actors = movie.Actors;
@@ -32,9 +40,9 @@ namespace MoviesForYou.Application.API.Services
                 }
                 await context.SaveChangesAsync();
             }
-            catch (Exception)
+            catch (Exception exception)
             {
-                return false;
+                throw new InternalServerException(exception.Message);
             }
             return true;
         }
@@ -46,15 +54,19 @@ namespace MoviesForYou.Application.API.Services
             {
                 movies = await context.Movies.ToListAsync();
             }
-            catch (Exception)
+            catch (Exception exception)
             {
-                return null;
+                throw new InternalServerException(exception.Message);
             }
             return movies;
         }
 
         public async Task<bool> UpdateMovieAsync(Movie movie)
         {
+            if (movie.MovieId <= 0 && !validationService.isValidMovie(movie))
+            {
+                throw new BadRequestException("Invalid Request parameter");
+            }
             try
             {
                 var existingMovie = await context.Movies.FindAsync(movie.MovieId);
@@ -70,12 +82,16 @@ namespace MoviesForYou.Application.API.Services
                 }
                 else
                 {
-                    return false;
+                    throw new NotFoundException("the movie record doesn't exist in the system");
                 }
             }
-            catch (Exception)
+            catch (NotFoundException exception)
             {
-                return false;
+                throw new NotFoundException(exception.Message);
+            }
+            catch (Exception exception)
+            {
+                throw new InternalServerException(exception.Message);
             }
             return true;
         }
