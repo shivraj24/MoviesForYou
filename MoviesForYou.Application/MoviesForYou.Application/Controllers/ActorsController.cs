@@ -18,14 +18,14 @@ namespace MoviesForYou.Application.API.Controllers
         [HttpPost("addActor")]
         public async Task<IActionResult> AddActorAsync(Actor actor)
         {
-            var isSuccessful = await actorServices.AddActorAsync(actor);
-            return Ok("Successfully Added the Actor");
+            await actorServices.AddActorAsync(actor);
+            return Created("Successfully Added the Actor",actor);
         } 
 
         [HttpPut("updateActor")]
         public async Task<IActionResult> UpdateActorAsync(Actor actor)
         {
-            var isSuccessful = await actorServices.UpdateActorAsync(actor);
+            await actorServices.UpdateActorAsync(actor);
             return Ok("Successfully Updated the actor");
         }
         [HttpGet("actors")]

@@ -214,7 +214,7 @@
 
 ### Response
 
-    HTTP/1.1 200 Ok
+    HTTP/1.1 201 Created
     content-length: 394
     content-type: application/json; charset=utf-8
     date: Sat, 10 Dec 2022 11:57:17 GMT
@@ -247,7 +247,7 @@
     server: Kestrel
 
 
-## Get list of Actors
+## Get list of Producers
 
 ### Request
 
@@ -319,7 +319,7 @@
     }
 ### Response
 
-    HTTP/1.1 200 OK
+    HTTP/1.1 201 Created
     content-length: 400
     content-type: text/plain; charset=utf-8
     date: Sat, 10 Dec 2022 12:08:23 GMT
