@@ -26,6 +26,7 @@ namespace MoviesForYou.Application.API
             services.AddDbContext<MoviesDataContext>(options =>
             {
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
+                options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
             });
             services.AddTransient<IMovieServices, MovieServices>();
             services.AddTransient<IActorServices, ActorServices>();
