@@ -17,14 +17,14 @@ namespace MoviesForYou.Application.API.Controllers
         [HttpPost("addProducer")]
         public async Task<IActionResult> AddProducer(Producer producer)
         {
-            var isSuccessful = await producerServices.AddProducerAsync(producer);
-            return Ok("Success");
+            await producerServices.AddProducerAsync(producer);
+            return Created("Successfully added producer",producer);
         }
 
         [HttpPut("updateProducer")]
         public async Task<IActionResult> UpdateProducer(Producer producer)
         {
-            var isSuccessful = await producerServices.UpdateProducerAsync(producer);
+            await producerServices.UpdateProducerAsync(producer);
             return Ok("Success");
         }
         [HttpGet("producers")]

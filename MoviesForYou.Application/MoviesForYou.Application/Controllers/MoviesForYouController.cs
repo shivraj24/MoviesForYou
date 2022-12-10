@@ -25,8 +25,8 @@ namespace MoviesForYou.Application.API.Controllers
         [HttpPost("AddMovie")]
         public async Task<ActionResult<SuccessfulResponse<Movie>>> AddMovie(Movie movie)
         {
-            var isSuccessful = await movieServices.AddMovieAsync(movie);
-            return Ok(new SuccessfulResponse<Movie>(movie, "Successfully Added"));
+            await movieServices.AddMovieAsync(movie);
+            return Created("Added Movie successfully",new SuccessfulResponse<Movie>(movie, "Successfully Added"));
         }
 
         [HttpPut("UpdateMovie")]
