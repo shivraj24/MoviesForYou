@@ -2,7 +2,7 @@
 
 ### Build ASP.NET Core Web API (.NET 6) :
 1. Use Entity Framework Core and LINQ.
-2. Use Asp.net Identity.
+2. Use Seq tool to view and collect application logs.
 3. Implement the Repository and Unit of Work Patterns.
 4. Implement the Custom Middlewares and ExceptionHandlers.
 5. Microsoft's SQL Server relational database management system
@@ -324,3 +324,10 @@
     content-type: text/plain; charset=utf-8
     date: Sat, 10 Dec 2022 12:08:23 GMT
     server: Kestrel
+
+## Application Logs:
+
+### Logs : 
+    ![Screenshot](SeqLogs.png)
+## Running Seq application on local docker container:
+    ![Screenshot](Docker.png)
