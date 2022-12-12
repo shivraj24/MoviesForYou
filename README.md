@@ -328,6 +328,6 @@
 ## Application Logs:
 
 ### Logs : 
-    ![Screenshot](https://github.com/shivraj24/MoviesForYou/blob/303174d833a37ed4e866aed1f4c314c58b125655/SeqLogs.png)
+   ![Screenshot](SeqLogs.png)
 ## Running Seq application on local docker container:
-    ![Screenshot](https://github.com/shivraj24/MoviesForYou/blob/303174d833a37ed4e866aed1f4c314c58b125655/Docker.png)
+   ![Screenshot](Docker.png)
