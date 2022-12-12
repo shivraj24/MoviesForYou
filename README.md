@@ -2,7 +2,7 @@
 
 ### Build ASP.NET Core Web API (.NET 6) :
 1. Use Entity Framework Core and LINQ.
-2. Use Asp.net Identity.
+2. Use Seq tool to view and collect application logs.
 3. Implement the Repository and Unit of Work Patterns.
 4. Implement the Custom Middlewares and ExceptionHandlers.
 5. Microsoft's SQL Server relational database management system
