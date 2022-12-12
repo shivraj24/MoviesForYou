@@ -5,6 +5,7 @@ using MoviesForYou.Application.API.Helpers;
 using MoviesForYou.Application.API.Interfaces;
 using MoviesForYou.Application.API.Middlewares;
 using MoviesForYou.Application.API.Services;
+using Serilog;
 
 namespace MoviesForYou.Application.API
 {
@@ -48,6 +49,8 @@ namespace MoviesForYou.Application.API
             app.UseHttpsRedirection();
 
             app.UseStaticFiles();
+
+            app.UseSerilogRequestLogging();
 
             app.UseRouting();
 
