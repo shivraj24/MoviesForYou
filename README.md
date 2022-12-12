@@ -324,3 +324,10 @@
     content-type: text/plain; charset=utf-8
     date: Sat, 10 Dec 2022 12:08:23 GMT
     server: Kestrel
+
+## Application Logs:
+
+### Logs : 
+    ![Screenshot](SeqLogs.png)
+## Running Seq application on local docker container:
+    ![Screenshot](Docker.png)
